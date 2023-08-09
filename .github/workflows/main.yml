@@ -1,4 +1,4 @@
-name: "CodeQL"
+name: "CodeQL_ManualSetup"
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
   workflow_dispatch: 
 
 jobs:
-  run-codeql-linux:
+  run-codeql-macos:
     name: Run CodeQL on Macos
     runs-on: macos-latest
 
@@ -16,10 +16,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v2
-      with:
-        languages: swift
+    #- name: Initialize CodeQL
+    #  uses: github/codeql-action/init@v2
+    #  with:
+    #    languages: swift
 
     - name: Build
       run: swift build
