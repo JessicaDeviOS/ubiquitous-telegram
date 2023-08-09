@@ -9,9 +9,7 @@ on:
 jobs:
   run-codeql-linux:
     name: Run CodeQL on Linux
-    runs-on: ubuntu-latest
-    permissions:
-      security-events: write
+    runs-on: macos-latest
 
     steps:
     - name: Checkout repository
