@@ -22,6 +22,10 @@ jobs:
 
     - name: Build
       run: swift build
+      
+    #generic/platform=iOS is sufficient for just building, - but need to specify concrete destination for tests
+    - name: Build 
+      run: xcodebuild build -scheme SomeApp -destination 'platform=iOS' #or any other name from the list of sim devices
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
